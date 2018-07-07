@@ -26,8 +26,9 @@
 				</div>
 				<div v-if="feelingIsSet" id="registerState" >
 					<h2>Your focus, meaning and environment is</h2>
-					<textarea name="focus" v-model="state">Focus: \n Meaning: \n Environment:</textarea>
+					<textarea v-model="state" name="state" placeholder="Focus: \n Meaning: \n Environment:"></textarea>
 					{{ state }}
+					<button class="submitbtn">Add my mood to the ledger</button>
 				</div>
 				<span v-if="feelingIsSet">DEV: Register time in backend: {{ displayTimestamp }}</span>
 				<div id="endpointshowcoolgiffromgifAPI"></div>

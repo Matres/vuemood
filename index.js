@@ -11,6 +11,7 @@ var moodapp = new Vue({
 		feelingIsSet: false,
 		currentfeeling: null,
 		timestamp: null,
+		state: null,
 	},
 	methods: {
 		registerFeeling: function (mood) {
