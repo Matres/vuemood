@@ -1,8 +1,8 @@
 <html>
 	<head>
 		<title>Matthijs' first Vue.js app - a mood tracker</title>
-		<!-- development version, includes helpful console warnings -->
 		<link rel="stylesheet" type="text/css" href="index.css">
+		<!-- development version, includes helpful console warnings -->
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	</head>
 	<body>
@@ -26,7 +26,7 @@
 				</div>
 				<div v-if="feelingIsSet" id="registerState" >
 					<h2>Your focus, meaning and environment is</h2>
-					<textarea name="focus" v-model="state"></textarea>
+					<textarea name="focus" v-model="state">Focus: \n Meaning: \n Environment:</textarea>
 					{{ state }}
 				</div>
 				<span v-if="feelingIsSet">DEV: Register time in backend: {{ displayTimestamp }}</span>
