@@ -1,0 +1,26 @@
+body {
+	font-family: Calibri;
+}
+#container {
+	margin: 2em auto;
+	width: 30em;
+}
+#registerFeeling ol {
+	padding: 0;
+}
+#registerFeeling ol li {
+	display: inline-block;
+	margin-left: 0.3em;
+}
+#registerFeeling ol li button {
+	padding: 0.5em;
+	width: 6em;
+	height: 5em;
+}
+#registerFeeling ol li button span {
+	display: block;
+	margin-bottom: 0.1em;
+}
+.vuelogo {
+	height: 0.75em;
+}
