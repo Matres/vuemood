@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Matthijs' first Vue.js app - a mood tracker</title>
 		<link rel="stylesheet" type="text/css" href="index.css">
 		<!-- development version, includes helpful console warnings -->
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 	<body>
 		<div id="container">
@@ -26,9 +28,9 @@
 				</div>
 				<div v-if="feelingIsSet" id="registerState" >
 					<h2>Your focus, meaning and environment is</h2>
-					<textarea v-model="state" name="state" placeholder="Focus: \n Meaning: \n Environment:"></textarea>
+					<textarea v-model="state" v-on:keyup="registerState(state)" name="state" placeholder="Focus: \n Meaning: \n Environment:"></textarea>
 					{{ state }}
-					<button class="submitbtn">Add my mood to the ledger</button>
+					<button class="submitbtn" v-on:click="saveMood()">Add my mood to the ledger</button>
 				</div>
 				<span v-if="feelingIsSet">DEV: Register time in backend: {{ displayTimestamp }}</span>
 				<div id="endpointshowcoolgiffromgifAPI"></div>
