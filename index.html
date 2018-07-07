@@ -10,11 +10,12 @@
 			<h1>Matthijs' <img class="vuelogo" src="https://vuejs.org/images/logo.png" alt="Vue.js" /> Vue.js mood tracker</h1>
 			<div id="moodapp">
 				<div id="registerFeeling">
-					<h2>You feel like</h2>
+					<h2 v-if="feelingIsSet">{{ displayFeeling }}</h2>
+					<h2 v-else>You feel like</h2>
 					<!--- user input + track timestamp in database -->
 					<ol>
 						<li v-for="mood in moods">
-							<button v-on:click="registerFeeling">
+							<button v-on:click="registerFeeling(mood.text)">
 								<span v-bind:class="mood.text">{{ mood.icon }}</span>{{ mood.text }}
 							</button>
 						</li>
@@ -22,9 +23,9 @@
 				</div>
 				<div v-if="feelingIsSet" id="registerState" >
 					<h2>Your focus, meaning and environment is</h2>
-					<input type="text" name="focus">s
+					<input type="text" name="focus">
 				</div>
-				<span>{{ displayTimestamp }}</span>
+				<span v-if="feelingIsSet">Register in backend: {{ displayTimestamp }}</span>
 			</div>
 		</div>
 

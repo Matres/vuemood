@@ -9,19 +9,26 @@ var moodapp = new Vue({
 			{ text: 'very bad', icon: ':('}
 		],
 		feelingIsSet: false,
+		currentfeeling: null,
 		timestamp: null,
 	},
 	methods: {
-		registerFeeling: function () {
+		registerFeeling: function (mood) {
 			//register click event here to the right button and receive it here.
-			this.moods.text
+			console.log(mood);
+			this.currentfeeling = mood;
 			// When a feeling is declared by user, show next question to user.
-			this.feelingIsSet = true
+			this.feelingIsSet = true;
 			// Register the timestamp of user click
-			this.timestamp = Date.now()
+			this.timestamp = Date.now();
+		},
+	},
+	computed: {
+		displayFeeling: function () {
+			return "Ok, you feel like " + this.currentfeeling;
 		},
 		displayTimestamp: function () {
-			return this.timestamp // this does not work aparently
+			return this.timestamp;
 		}
 	}
 })
