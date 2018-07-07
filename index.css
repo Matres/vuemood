@@ -1,9 +1,10 @@
 body {
 	font-family: Calibri;
+	font-size: 18px;
 }
 #container {
 	margin: 2em auto;
-	width: 30em;
+	width: 27em;
 }
 #registerFeeling ol {
 	padding: 0;
@@ -21,6 +22,14 @@ body {
 	display: block;
 	margin-bottom: 0.1em;
 }
+#registerState textarea {
+	width: 100%;
+}
 .vuelogo {
 	height: 0.75em;
 }
+.displayFeeling {
+	font-style: italic;
+	color: #333;
+}
+

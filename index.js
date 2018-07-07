@@ -22,10 +22,13 @@ var moodapp = new Vue({
 			// Register the timestamp of user click
 			this.timestamp = Date.now();
 		},
+		changeFeeling: function () {
+			this.feelingIsSet = false;
+		}
 	},
 	computed: {
 		displayFeeling: function () {
-			return "Ok, you feel like " + this.currentfeeling;
+			return "Thanks for sharing. Ok, so you feel like " + this.currentfeeling +".";
 		},
 		displayTimestamp: function () {
 			return this.timestamp;
